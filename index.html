@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCHEDULE | UNDERDOGS RADIO MOVEMENT</title>
+  <title>UNDERDOGS RADIO | URM</title>
   
   <!-- Font ufficiali -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,129 +104,139 @@
       color: #555555;
     }
 
-    /* MAIN TITLE */
-    .page-title {
+    /* HERO SECTION */
+    .hero {
       text-align: center;
+      margin: 30px 0 10px 0;
+    }
+
+    .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 5.5rem;
-      letter-spacing: 3px;
+      font-size: 6.5rem;
+      letter-spacing: 4px;
       line-height: 1;
       text-shadow: 0 5px 20px rgba(0,0,0,0.9);
-      margin: 30px 0 25px 0;
-      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    /* DAYS TABS */
-    .days-tabs {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 8px;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-      width: 100%;
-    }
-
-    .tab-btn {
-      background: rgba(20, 22, 25, 0.85);
-      border: 1px solid #3e4246;
-      color: #ffffff;
-      padding: 12px 5px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.2s;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
-    }
-
-    .tab-btn:hover {
-      background: #2a2d32;
-      border-color: #777;
-    }
-
-    .tab-btn.active {
+    .btn-listen {
       background: #ffffff;
       color: #000000;
-      border-color: #ffffff;
-      border-bottom: 4px solid #e50914;
-      font-weight: 700;
-    }
-
-    /* SCHEDULE GRID */
-    .schedule-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    /* CARD STILE RACK MILITARE/LOCANDINA */
-    .show-card {
-      background: rgba(18, 20, 23, 0.9);
-      border: 2px solid #3e4246;
-      padding: 15px;
-      display: flex;
+      border: 2px solid #e50914;
+      padding: 10px 35px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: inline-flex;
       align-items: center;
-      gap: 15px;
-      position: relative;
+      gap: 12px;
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-listen:hover {
+      background: #e50914;
+      color: #ffffff;
+      transform: scale(1.03);
+    }
+
+    /* ONDA AUDIO GRAFICA */
+    .waveform-container {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3px;
+      margin-top: 25px;
+    }
+
+    .bar {
+      width: 4px;
+      background: linear-gradient(to top, #ffffff 65%, #e50914 100%);
+    }
+
+    /* GRIGLIA 4 CARD */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(18, 20, 23, 0.85);
+      border: 2px solid #3e4246;
+      padding: 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
       box-shadow: inset 0 0 15px #000000;
       backdrop-filter: blur(5px);
     }
 
-    /* INDICATORE ROSSO TOP-RIGHT */
-    .show-card::after {
-      content: '';
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      width: 12px;
-      height: 4px;
-      background: #e50914;
-      border-radius: 1px;
-    }
-
-    .show-thumb {
-      width: 85px;
-      height: 85px;
-      background: #1e2124;
-      border: 1px solid #444;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .show-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .show-time {
-      font-size: 0.85rem;
-      color: #aaaaaa;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-
-    .show-title {
+    .card-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem;
-      line-height: 0.95;
+      font-size: 1.3rem;
       letter-spacing: 1px;
       color: #ffffff;
-      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
     }
 
-    @media (max-width: 950px) {
-      .schedule-grid { grid-template-columns: repeat(2, 1fr); }
-      .days-tabs { grid-template-columns: repeat(4, 1fr); }
-      .page-title { font-size: 3.5rem; }
+    .card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    @media (max-width: 600px) {
-      .schedule-grid { grid-template-columns: 1fr; }
-      .days-tabs { grid-template-columns: repeat(2, 1fr); }
+    .show-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.3rem;
+      line-height: 0.95;
+      letter-spacing: 1px;
+    }
+
+    .play-btn-small {
+      width: 32px;
+      height: 32px;
+      background: #ffffff;
+      border-radius: 50%;
+      border: none;
+      margin-top: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .list-items {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+    }
+
+    .list-items li {
+      font-size: 0.85rem;
+      color: #cccccc;
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+
+    .list-items li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-title { font-size: 4rem; }
     }
   </style>
 </head>
@@ -244,114 +254,84 @@
       </div>
     </div>
     <nav>
-      <a href="index.html">HOME</a> <span>|</span>
-      <a href="schedule.html" class="active">SCHEDULE</a> <span>|</span>
+      <a href="index.html" class="active">HOME</a> <span>|</span>
+      <a href="schedule.html">SCHEDULE</a> <span>|</span>
       <a href="#">PODCAST</a> <span>|</span>
       <a href="#">ARCHIVE</a> <span>|</span>
       <a href="#">NEWS</a>
     </nav>
   </header>
 
-  <!-- TITLE -->
-  <h1 class="page-title">SCHEDULE / WEEKLY SCHEDULE</h1>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1 class="hero-title">UNDERDOGS RADIO</h1>
+    <button class="btn-listen">
+      <span>►</span> LISTEN LIVE NOW
+    </button>
 
-  <!-- DAYS SELECTOR -->
-  <div class="days-tabs">
-    <button class="tab-btn active">TODAY</button>
-    <button class="tab-btn">TUE</button>
-    <button class="tab-btn">WED</button>
-    <button class="tab-btn">THU</button>
-    <button class="tab-btn">FRI</button>
-    <button class="tab-btn">SAT</button>
-    <button class="tab-btn">SUN</button>
-  </div>
+    <!-- ONDA AUDIO -->
+    <div class="waveform-container" id="waveform"></div>
+  </section>
 
-  <!-- SHOWS GRID -->
-  <div class="schedule-grid">
-
-    <!-- CARD 1 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&auto=format&fit=crop" alt="Grinding Hour" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">10:00 - 12:00</div>
-        <div class="show-title">GRINDING<br>HOUR</div>
+  <!-- LE 4 SCHEDE -->
+  <section class="cards-grid">
+    
+    <div class="card">
+      <div class="card-title">NOW ON AIR:</div>
+      <div class="card-content">
+        <div class="show-name">GRINDING<br>HOUR</div>
+        <button class="play-btn-small">►</button>
       </div>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=200&auto=format&fit=crop" alt="Bite Back Sessions" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">14:00 - 16:00</div>
-        <div class="show-title">BITE BACK<br>SESSIONS</div>
+    <div class="card">
+      <div class="card-title">NEXT SHOW:</div>
+      <div class="card-content">
+        <div class="show-name" style="font-size: 1.6rem;">BITE BACK<br>SESSIONS</div>
       </div>
     </div>
 
-    <!-- CARD 3 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200&auto=format&fit=crop" alt="Ginner" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">14:00 - 18:00</div>
-        <div class="show-title">GINNER</div>
+    <div class="card">
+      <div class="card-title">LATEST PODCASTS:</div>
+      <div class="card-content">
+        <ul class="list-items">
+          <li>Archive 01 | Raw Beats</li>
+          <li>Archive 02 | Raw Beats</li>
+          <li>Archive 03 | Raw Beats</li>
+          <li>Archive 04 | Raw Beats</li>
+        </ul>
       </div>
     </div>
 
-    <!-- CARD 4 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=200&auto=format&fit=crop" alt="Bite Back Sessions" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">14:00 - 16:00</div>
-        <div class="show-title">BITE BACK<br>SESSIONS</div>
+    <div class="card">
+      <div class="card-title">LATEST NEWS:</div>
+      <div class="card-content">
+        <ul class="list-items">
+          <li>Underdogs Radio on Bite Back Sinner</li>
+          <li>News Industry The life novo.tntims.com</li>
+          <li>Underdogs Radio - "Grinding Hour"</li>
+        </ul>
       </div>
     </div>
 
-    <!-- CARD 5 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&auto=format&fit=crop" alt="Raw Beats" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">18:00 - 20:00</div>
-        <div class="show-title">RAW BEATS</div>
-      </div>
-    </div>
+  </section>
 
-    <!-- CARD 6 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=200&auto=format&fit=crop" alt="Raw Beats" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">18:00 - 20:00</div>
-        <div class="show-title">RAW BEATS</div>
-      </div>
-    </div>
-
-    <!-- CARD 7 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=200&auto=format&fit=crop" alt="Grinding Hour" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">10:00 - 12:00</div>
-        <div class="show-title">GRINDING<br>HOUR</div>
-      </div>
-    </div>
-
-    <!-- CARD 8 -->
-    <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=200&auto=format&fit=crop" alt="Nocturnal Sub-System" class="show-thumb">
-      <div class="show-info">
-        <div class="show-time">22:00</div>
-        <div class="show-title">NOCTURNAL<br>SUB-SYSTEM</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SCRIPT BASE PER CAMBIARE I GIORNI -->
+  <!-- GENERATORE ONDA AUDIO -->
   <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-      });
-    });
+    const container = document.getElementById('waveform');
+    const barCount = 100;
+    
+    for (let i = 0; i < barCount; i++) {
+      const bar = document.createElement('div');
+      bar.classList.add('bar');
+      
+      let height = Math.sin(i * 0.12) * 35 + Math.random() * 55 + 20;
+      if (i > 25 && i < 35) height += 45; 
+      if (i > 65 && i < 80) height += 55;
+      
+      bar.style.height = `${Math.min(height, 150)}px`;
+      container.appendChild(bar);
+    }
   </script>
 
 </body>
