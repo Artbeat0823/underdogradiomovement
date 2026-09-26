@@ -4,28 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNDERDOGS RADIO | URM</title>
+  
+  <!-- Font ufficiale Bebas Neue per titoli identici alla foto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
-      background-color: #121416;
-      background-image: 
-        radial-gradient(circle at 50% 30%, rgba(30, 35, 40, 0.8), rgba(10, 11, 12, 0.95)),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 2px, transparent 2px, transparent 4px);
+      background: #0f1012 url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #ffffff;
       font-family: 'Roboto Condensed', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 40px;
+      padding: 15px 30px;
     }
 
     /* HEADER */
@@ -33,259 +34,157 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo-box {
-      border: 3px solid #ffffff;
-      padding: 2px 8px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-    .brand-text {
-      text-align: left;
-    }
-
-    .brand-text h2 {
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      color: #dddddd;
-      font-weight: 400;
-    }
-
-    .brand-text p {
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      color: #888888;
+    .logo-img {
+      height: 60px;
+      object-fit: contain;
     }
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 15px;
     }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: color 0.2s;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
 
-    nav a:hover, nav a.active {
+    nav a:hover {
       color: #e50914;
     }
 
     /* HERO SECTION */
     .hero {
       text-align: center;
-      margin: 40px 0 20px 0;
-      position: relative;
+      margin-top: 20px;
     }
 
     .hero-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 5rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-      text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 6rem;
+      letter-spacing: 3px;
+      line-height: 1;
+      text-shadow: 2px 4px 10px rgba(0,0,0,0.9);
+      margin-bottom: 15px;
     }
 
     .btn-listen {
       background: #ffffff;
       color: #000000;
       border: 2px solid #e50914;
-      padding: 12px 35px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      padding: 10px 30px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
-      transition: transform 0.2s, background 0.2s, color 0.2s;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
     }
 
     .btn-listen:hover {
       background: #e50914;
       color: #ffffff;
-      transform: scale(1.05);
     }
 
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 14px solid #000000;
-    }
-
-    .btn-listen:hover .play-icon {
-      border-left-color: #ffffff;
-    }
-
-    /* WAVEFORM ARTWORK */
-    .waveform-container {
+    /* WAVEFORM AREA */
+    .waveform-box {
       width: 100%;
       height: 180px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 3px;
-      margin-top: 30px;
-      opacity: 0.85;
+      margin-top: 20px;
+      background: url('waveform.png') no-repeat center bottom;
+      background-size: contain;
     }
 
-    .bar {
-      width: 4px;
-      background: linear-gradient(to top, #ffffff 70%, #e50914 100%);
-      border-radius: 1px 1px 0 0;
-    }
-
-    /* CARDS GRID */
+    /* GRIGLIA 4 CARD IN BASSO */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 15px;
       margin-top: 20px;
     }
 
     .card {
-      background: rgba(20, 22, 25, 0.9);
-      border: 2px solid #3a3d40;
-      border-radius: 2px;
-      padding: 20px;
+      background: rgba(18, 20, 22, 0.85);
+      border: 2px solid #4a4d50;
+      box-shadow: inset 0 0 10px #000000;
+      padding: 15px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 220px;
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+      min-height: 200px;
     }
 
-    .card-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+    .card-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
       color: #ffffff;
-      text-transform: uppercase;
       border-bottom: 1px solid #333;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
     }
 
-    .card-content {
+    .card-body {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
-    .show-name {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    .show-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      line-height: 0.9;
     }
 
-    .btn-circle-play {
-      width: 35px;
-      height: 35px;
+    .play-btn-small {
+      width: 30px;
+      height: 30px;
+      background: #fff;
       border-radius: 50%;
-      background: #ffffff;
       border: none;
+      margin-top: 10px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .btn-circle-play::after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 10px solid #000;
-      margin-left: 2px;
-    }
-
-    .avatar-placeholder {
-      width: 70px;
-      height: 70px;
-      background: #2a2d30;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #555;
-    }
-
-    .podcast-list, .news-list {
+    .list-items {
       list-style: none;
       text-align: left;
       width: 100%;
-    }
-
-    .podcast-list li, .news-list li {
       font-size: 0.85rem;
-      color: #cccccc;
-      padding: 6px 0;
-      border-bottom: 1px dashed #2a2d30;
     }
 
-    .podcast-list li:last-child, .news-list li:last-child {
-      border-bottom: none;
+    .list-items li {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #ccc;
     }
 
-    @media (max-width: 900px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .hero-title {
-        font-size: 3rem;
-      }
+    @media (max-width: 800px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-title { font-size: 3.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER CON LOGO REALE -->
   <header>
-    <div class="brand">
-      <div class="logo-box">URM</div>
-      <div class="brand-text">
-        <h2>UNDERDOGS RADIO MOVEMENT</h2>
-        <p>NEVER STOP BITING</p>
-      </div>
-    </div>
+    <img src="logo.png" alt="URM Logo" class="logo-img" onerror="this.style.display='none'">
     <nav>
-      <a href="#" class="active">HOME</a>
-      <a href="#">PALINSESTO</a>
-      <a href="#">PODCAST</a>
-      <a href="#">ARCHIVIO</a>
+      <a href="#">HOME</a> | 
+      <a href="#">PALINSESTO</a> | 
+      <a href="#">PODCAST</a> | 
+      <a href="#">ARCHIVIO</a> | 
       <a href="#">NEWS</a>
     </nav>
   </header>
@@ -293,41 +192,36 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <h1 class="hero-title">UNDERDOGS RADIO</h1>
-    <button class="btn-listen" id="mainPlayBtn">
-      <span class="play-icon"></span>
-      LISTEN LIVE NOW
+    <button class="btn-listen">
+      <span>►</span> LISTEN LIVE NOW
     </button>
-
-    <!-- WAVEFORM ARTWORK -->
-    <div class="waveform-container" id="waveform"></div>
+    
+    <!-- IMMAGINE ONDA SONORA -->
+    <div class="waveform-box"></div>
   </section>
 
-  <!-- CARDS GRID -->
+  <!-- LE 4 SCHEDE IN BASSO -->
   <section class="cards-grid">
     
-    <!-- CARD 1: ORA IN ONDA -->
     <div class="card">
-      <div class="card-title">ORA IN ONDA:</div>
-      <div class="card-content">
-        <div class="show-name">GRINDING<br>HOUR</div>
-        <button class="btn-circle-play"></button>
+      <div class="card-header">ORA IN ONDA:</div>
+      <div class="card-body">
+        <div class="show-title">GRINDING<br>HOUR</div>
+        <button class="play-btn-small">►</button>
       </div>
     </div>
 
-    <!-- CARD 2: PROSSIMO SPETTACOLO -->
     <div class="card">
-      <div class="card-title">PROSSIMO SPETTACOLO:</div>
-      <div class="card-content">
-        <div class="avatar-placeholder">👤</div>
-        <div class="show-name" style="font-size: 1.4rem;">BITE BACK<br>SESSION</div>
+      <div class="card-header">PROSSIMO SPETTACOLO:</div>
+      <div class="card-body">
+        <div class="show-title" style="font-size: 1.5rem;">BITE BACK SESSION</div>
       </div>
     </div>
 
-    <!-- CARD 3: ULTIMI PODCAST -->
     <div class="card">
-      <div class="card-title">ULTIMI PODCAST:</div>
-      <div class="card-content">
-        <ul class="podcast-list">
+      <div class="card-header">ULTIMI PODCAST:</div>
+      <div class="card-body">
+        <ul class="list-items">
           <li>Archive 01 | Raw Beats</li>
           <li>Archive 02 | Raw Beats</li>
           <li>Archive 03 | Raw Beats</li>
@@ -336,11 +230,10 @@
       </div>
     </div>
 
-    <!-- CARD 4: ULTIME NEWS -->
     <div class="card">
-      <div class="card-title">ULTIME NEWS:</div>
-      <div class="card-content">
-        <ul class="news-list">
+      <div class="card-header">ULTIME NEWS:</div>
+      <div class="card-body">
+        <ul class="list-items">
           <li>Underdogs Radio on Bite Back Sinner</li>
           <li>News Industry The life novo.tntims.com</li>
           <li>Underdogs Radio - "Grinding Hour"</li>
@@ -349,25 +242,6 @@
     </div>
 
   </section>
-
-  <!-- SCRIPT PER GENERARE L'ONDA AUDIO ARTISTICA -->
-  <script>
-    const container = document.getElementById('waveform');
-    const barCount = 120;
-    
-    for (let i = 0; i < barCount; i++) {
-      const bar = document.createElement('div');
-      bar.classList.add('bar');
-      
-      // Calcola un'altezza casuale frastagliata simile alla foto
-      let height = Math.sin(i * 0.1) * 40 + Math.random() * 60 + 20;
-      if (i > 30 && i < 40) height += 50; 
-      if (i > 80 && i < 95) height += 60;
-      
-      bar.style.height = `${Math.min(height, 160)}px`;
-      container.appendChild(bar);
-    }
-  </script>
 
 </body>
 </html>
