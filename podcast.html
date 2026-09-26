@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PODCASTS & ARCHIVE | UNDERDOGS RADIO MOVEMENT</title>
+  
+  <!-- Font ufficiali -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: #ffffff;
+      font-family: 'Roboto Condensed', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 40px;
+      
+      background-color: #0d0e10;
+      background-image: 
+        url('bg.jpg'),
+        radial-gradient(circle at 50% 35%, rgba(40, 45, 50, 0.5) 0%, rgba(10, 11, 12, 0.95) 70%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 2px, transparent 2px, transparent 4px);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-box {
+      border: 3px solid #ffffff;
+      padding: 2px 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .brand-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: #aaaaaa;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #e50914;
+    }
+
+    nav span {
+      color: #555555;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      width: 100%;
+    }
+
+    /* TOP SECTION: FEATURED + TITLE & FILTERS */
+    .top-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 40px;
+    }
+
+    /* FEATURED PODCAST CARD */
+    .featured-card {
+      background: rgba(18, 20, 23, 0.9);
+      border: 2px solid #3e4246;
+      padding: 15px;
+      position: relative;
+      box-shadow: inset 0 0 15px #000000;
+      backdrop-filter: blur(5px);
+    }
+
+    .featured-img-wrap {
+      width: 100%;
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #3e4246;
+      margin-bottom: 15px;
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid #e50914;
+      color: #e50914;
+      font-family: 'Bebas Neue', sans-serif;
+      padding: 2px 8px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .featured-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .featured-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .play-btn-large {
+      width: 50px;
+      height: 50px;
+      background: #e50914;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .play-btn-large:hover {
+      transform: scale(1.1);
+    }
+
+    .featured-title-box h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.3rem;
+      line-height: 0.95;
+      letter-spacing: 1px;
+    }
+
+    .featured-title-box p {
+      font-size: 0.8rem;
+      color: #aaaaaa;
+      letter-spacing: 1px;
+      margin-top: 3px;
+    }
+
+    .mini-wave {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 30px;
+    }
+
+    .mini-wave div {
+      width: 3px;
+      background: #777;
+    }
+
+    /* RIGHT SIDE: TITLE & FILTERS */
+    .title-filters-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      letter-spacing: 3px;
+      line-height: 0.9;
+      text-transform: uppercase;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.9);
+      margin-bottom: 30px;
+    }
+
+    .filters-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: rgba(20, 22, 25, 0.85);
+      border: 1px solid #3e4246;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    /* PODCAST GRID */
+    .podcast-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .podcast-card {
+      background: rgba(18, 20, 23, 0.9);
+      border: 2px solid #3e4246;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: inset 0 0 15px #000000;
+      backdrop-filter: blur(5px);
+    }
+
+    .podcast-thumb-wrap {
+      width: 100%;
+      height: 160px;
+      border: 1px solid #3e4246;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .podcast-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .podcast-details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .podcast-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      line-height: 0.95;
+      letter-spacing: 1px;
+    }
+
+    .podcast-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 10px;
+    }
+
+    .podcast-author {
+      font-size: 0.75rem;
+      color: #aaaaaa;
+      letter-spacing: 1px;
+    }
+
+    .podcast-duration {
+      font-size: 0.75rem;
+      color: #888888;
+      margin-bottom: 2px;
+    }
+
+    .play-btn-circle {
+      width: 32px;
+      height: 32px;
+      background: #e50914;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      transition: transform 0.2s;
+    }
+
+    .play-btn-circle:hover {
+      transform: scale(1.15);
+    }
+
+    @media (max-width: 950px) {
+      .top-layout { grid-template-columns: 1fr; }
+      .podcast-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-title { font-size: 3.8rem; }
+    }
+
+    @media (max-width: 550px) {
+      .podcast-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="URM Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+      <div class="logo-box" id="alt-logo" style="display:none;">URM</div>
+      
+      <div class="brand-text">
+        <h2>UNDERDOGS RADIO MOVEMENT</h2>
+        <p>NEVER STOP BITING</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">HOME</a> <span>|</span>
+      <a href="schedule.html">SCHEDULE</a> <span>|</span>
+      <a href="podcast.html" class="active">PODCAST</a> <span>|</span>
+      <a href="#">ARCHIVE</a> <span>|</span>
+      <a href="#">NEWS</a>
+    </nav>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <div class="container">
+    
+    <!-- TOP SECTION -->
+    <div class="top-layout">
+      
+      <!-- FEATURED SHOW -->
+      <div class="featured-card">
+        <div class="featured-img-wrap">
+          <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=800&auto=format&fit=crop" alt="Bite Back Session" class="featured-img">
+          <div class="featured-badge">FEATURED</div>
+        </div>
+        <div class="featured-info">
+          <div class="featured-left">
+            <button class="play-btn-large">►</button>
+            <div class="featured-title-box">
+              <h3>BITE BACK SESSION #04</h3>
+              <p>HOST: ELIZA</p>
+            </div>
+          </div>
+          <!-- ONDA SINTETICA -->
+          <div class="mini-wave">
+            <div style="height: 10px;"></div>
+            <div style="height: 22px;"></div>
+            <div style="height: 15px;"></div>
+            <div style="height: 28px;"></div>
+            <div style="height: 18px;"></div>
+            <div style="height: 12px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TITLE & CATEGORIES -->
+      <div class="title-filters-box">
+        <h1 class="page-title">PODCASTS / ARCHIVE</h1>
+        <div>
+          <p style="color: #888; font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 1px;">FILTER BY GENRE:</p>
+          <div class="filters-grid">
+            <button class="filter-btn active">ALL</button>
+            <button class="filter-btn">TECHNO</button>
+            <button class="filter-btn">DRILL</button>
+            <button class="filter-btn">INDUSTRIAL</button>
+            <button class="filter-btn">TALK</button>
+            <button class="filter-btn">INTERVIEWS</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PODCAST GRID -->
+    <div class="podcast-grid">
+
+      <!-- CARD 1 -->
+      <div class="podcast-card">
+        <div class="podcast-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop" alt="Sonic Rage" class="podcast-thumb">
+        </div>
+        <div class="podcast-details">
+          <div class="podcast-title">SONIC RAGE #12</div>
+          <div class="podcast-footer">
+            <div>
+              <div class="podcast-duration">58 MIN</div>
+              <div class="podcast-author">'DJ AXEL'</div>
+            </div>
+            <button class="play-btn-circle">►</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="podcast-card">
+        <div class="podcast-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop" alt="Drill Depot" class="podcast-thumb">
+        </div>
+        <div class="podcast-details">
+          <div class="podcast-title">DRILL DEPOT #07</div>
+          <div class="podcast-footer">
+            <div>
+              <div class="podcast-duration">61 MIN</div>
+              <div class="podcast-author">'MC KANE'</div>
+            </div>
+            <button class="play-btn-circle">►</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="podcast-card">
+        <div class="podcast-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop" alt="Techno Pulse" class="podcast-thumb">
+        </div>
+        <div class="podcast-details">
+          <div class="podcast-title">TECHNO PULSE #03</div>
+          <div class="podcast-footer">
+            <div>
+              <div class="podcast-duration">55 MIN</div>
+              <div class="podcast-author">'SYSTEMA'</div>
+            </div>
+            <button class="play-btn-circle">►</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="podcast-card">
+        <div class="podcast-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop" alt="Deep Focus" class="podcast-thumb">
+        </div>
+        <div class="podcast-details">
+          <div class="podcast-title">DEEP FOCUS #09</div>
+          <div class="podcast-footer">
+            <div>
+              <div class="podcast-duration">60 MIN</div>
+              <div class="podcast-author">'KAIZEN'</div>
+            </div>
+            <button class="play-btn-circle">►</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT BASE PER I FILTRI -->
+  <script>
+    const filters = document.querySelectorAll('.filter-btn');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(f => f.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
