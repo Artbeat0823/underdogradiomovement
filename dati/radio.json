@@ -1,0 +1,260 @@
+{
+"live": {
+"titolo": "THE GRINDING HOUR",
+"sottotitolo": "CON DJ AXEL — DIRETTA STUDIO",
+"immagine": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
+"streamUrl": ""
+},
+"palinsesto": {
+"LUN": [
+{
+"orario": "10:00 - 12:00",
+"titolo": "CONCRETE MORNING",
+"host": "HOST: MARCO V.",
+"img": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "15:00 - 17:00",
+"titolo": "NOISE & RIOT",
+"host": "CON SARA K.",
+"img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "21:00 - 23:00",
+"titolo": "SUBGROUND FREQUENCIES",
+"host": "HOST: SYST3M",
+"img": "https://images.unsplash.com/photo-1571266028243-d220c6a8b0e7?auto=format&fit=crop&w=400&q=80"
+}
+],
+"MAR": [
+{
+"orario": "11:00 - 13:00",
+"titolo": "RAW VINYL SELECTION",
+"host": "CON DJ AXEL",
+"img": "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "18:00 - 20:00",
+"titolo": "UNDERDOG TALK",
+"host": "REDAZIONE URM",
+"img": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80"
+}
+],
+"MER": [
+{
+"orario": "10:00 - 12:00",
+"titolo": "GRINDING HOUR",
+"host": "CON DJ AXEL",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "14:00 - 16:00",
+"titolo": "BITE BACK SESSIONS",
+"host": "HOST: ELIZA",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "15:00 - 16:00",
+"titolo": "RAW BEATS",
+"host": "HOST: ELIZA",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "16:00 - 16:00",
+"titolo": "BITE BACK'S HOUR",
+"host": "HOST: ELIZA",
+"img": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&q=80"
+}
+],
+"GIO": [
+{
+"orario": "14:00 - 16:00",
+"titolo": "INDUSTRIAL ZONE",
+"host": "HOST: KANE",
+"img": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "20:00 - 22:00",
+"titolo": "PUNK ARCHIVES",
+"host": "CON VERA",
+"img": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=400&q=80"
+}
+],
+"VEN": [
+{
+"orario": "17:00 - 19:00",
+"titolo": "WARM UP WARRIORS",
+"host": "HOST: ELIZA",
+"img": "https://images.unsplash.com/photo-1571266028243-d220c6a8b0e7?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "22:00 - 01:00",
+"titolo": "NIGHT SHIFT TECHNO",
+"host": "GUEST DJ SET",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+}
+],
+"SAB": [
+{
+"orario": "15:00 - 18:00",
+"titolo": "STREET SOUNDS MARATHON",
+"host": "URM CREW",
+"img": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "21:00 - 00:00",
+"titolo": "WAREHOUSE LIVE",
+"host": "LIVE STREAMING",
+"img": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80"
+}
+],
+"DOM": [
+{
+"orario": "12:00 - 14:00",
+"titolo": "SUNDAY HANGOVER",
+"host": "CON DJ AXEL",
+"img": "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?auto=format&fit=crop&w=400&q=80"
+},
+{
+"orario": "18:00 - 20:00",
+"titolo": "SPOKEN WORD & MANIFESTO",
+"host": "HOST: ELIZA",
+"img": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80"
+}
+]
+},
+"podcasts": [
+{
+"id": "pod-1",
+"titolo": "BITE BACK SESSION #04",
+"categoria": "PUNK",
+"host": "HOST: ELIZA",
+"durata": "58 MIN",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"id": "pod-2",
+"titolo": "SONIC RAGE #12",
+"categoria": "TECHNO",
+"host": "DJ AXEL",
+"durata": "45 MIN",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"id": "pod-3",
+"titolo": "DRILL DEPOT #07",
+"categoria": "TECHNO",
+"host": "MC KANE",
+"durata": "60 MIN",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"id": "pod-4",
+"titolo": "TECHNO PULSE #03",
+"categoria": "TECHNO",
+"host": "SYSTEMA",
+"durata": "52 MIN",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+},
+{
+"id": "pod-5",
+"titolo": "NEVER STOP BITING #01",
+"categoria": "PARLATO",
+"host": "REDAZIONE URM",
+"durata": "34 MIN",
+"img": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80"
+}
+],
+"archivio": [
+{
+"id": "arch-1",
+"titolo": "SONIC RAGE #12",
+"host": "DJ AXEL",
+"anno": "2026",
+"genere": "TECHNO",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-2",
+"titolo": "SONIC RAGE #11",
+"host": "MC KANE",
+"anno": "2026",
+"genere": "TECHNO",
+"img": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-3",
+"titolo": "LIVE FROM THE BASEMENT - EPISODE 05",
+"host": "SYSTEMA",
+"anno": "2026",
+"genere": "INDUSTRIAL",
+"img": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-4",
+"titolo": "LIVE FROM THE BASEMENT - EPISODE 04",
+"host": "ELIZA",
+"anno": "2026",
+"genere": "PUNK",
+"img": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-5",
+"titolo": "INDUSTRIAL SOUND - VOL. 2",
+"host": "DJ AXEL",
+"anno": "2025",
+"genere": "INDUSTRIAL",
+"img": "https://images.unsplash.com/photo-1571266028243-d220c6a8b0e7?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-6",
+"titolo": "HARDCORE ROOTS - SPECIAL",
+"host": "ELIZA",
+"anno": "2025",
+"genere": "HARDCORE",
+"img": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-7",
+"titolo": "THE UNDERDOG SESSIONS #09",
+"host": "MC KANE",
+"anno": "2025",
+"genere": "HARDCORE",
+"img": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+},
+{
+"id": "arch-8",
+"titolo": "THE UNDERDOG SESSIONS #08",
+"host": "SYSTEMA",
+"anno": "2024",
+"genere": "PUNK",
+"img": "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?auto=format&fit=crop&w=600&q=80"
+}
+],
+"news": [
+{
+"id": "news-1",
+"data": "12 MAGGIO 2026",
+"titolo": "NUOVO EPISODIO: THE GRINDING HOUR LIVE DAL BUNKER",
+"estratto": "Un viaggio sonoro intenso registrato dal vivo nel cuore dell'underground. Ospiti speciali e selezioni inedite curate da DJ Axel senza filtri né compromessi.",
+"contenutoCompleto": "Un viaggio sonoro intenso registrato dal vivo nel cuore dell'underground. Ospiti speciali e selezioni inedite curate da DJ Axel senza filtri né compromessi.\n\nDurante due ore ininterrotte di trasmissione analogica e digitale, il bunker di URM ha ospitato un set crudo tra industrial techno, EBM e sonorità punk d'archivio. La registrazione integrale è ora disponibile nella sezione Podcast e Archivio per tutti gli ascoltatori.",
+"img": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80"
+},
+{
+"id": "news-2",
+"data": "05 MAGGIO 2026",
+"titolo": "RESOCONTO EVENTO: UNDERDOG NIGHT A MILANO",
+"estratto": "Una notte indimenticabile all'insegna della musica indipendente. Guarda le foto e rivivi i momenti migliori del nostro ultimo showcase collettivo.",
+"contenutoCompleto": "Una notte indimenticabile all'insegna della musica indipendente. Guarda le foto e rivivi i momenti migliori del nostro ultimo showcase collettivo.\n\nOltre trecento persone hanno riempito lo spazio industriale alla periferia di Milano per sostenere la scena libera. Sul palco si sono alternati Eliza, Systema e MC Kane in un back-to-back finale durato fino alle prime luci dell'alba. Nessuno sponsor, solo impianto e attitudine.",
+"img": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+},
+{
+"id": "news-3",
+"data": "28 APRILE 2026",
+"titolo": "INTERVISTA ESCLUSIVA CON DJ AXEL SUL FUTURO DEL PUNK",
+"estratto": "Abbiamo incontrato il resident DJ per parlare delle nuove sonorità, delle radici del movimento e dei prossimi progetti radiofonici in arrivo su URM.",
+"contenutoCompleto": "Abbiamo incontrato il resident DJ per parlare delle nuove sonorità, delle radici del movimento e dei prossimi progetti radiofonici in arrivo su URM.\n\n"La radio indipendente oggi ha lo stesso ruolo che avevano le fanzine fotocopiate negli anni Ottanta", racconta DJ Axel dal nostro studio. "Non ci interessa inseguire gli algoritmi: vogliamo dare spazio a chi ha qualcosa da urlare e dischi da consumare."",
+"img": "https://images.unsplash.com/photo-1571266028243-d220c6a8b0e7?auto=format&fit=crop&w=800&q=80"
+}
+]
+}
