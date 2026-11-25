@@ -112,9 +112,10 @@
 <body class="selection:bg-white selection:text-black">
 
     <!-- ==========================================================================
-         HEADER FISSO IN ALTO (Logo URM a sinistra + Menu Navigazione a destra)
+         HEADER FISSO IN ALTO (Banda nera piena con Logo URM e Menu Navigazione)
          ========================================================================== -->
-    <header class="w-full max-w-6xl mx-auto px-6 sm:px-10 pt-8 pb-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <header class="w-full bg-black border-b border-[#242424]">
+        <div class="w-full max-w-6xl mx-auto px-6 sm:px-10 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
         <!-- LOGO URM (Cliccabile per tornare alla Home) -->
         <!-- NOTA PER IL FUTURO: Quando caricherai il tuo logo ufficiale su GitHub, 
@@ -149,6 +150,7 @@
             <span class="text-neutral-600 select-none">|</span>
             <button onclick="navigateTo('news')" data-nav="news" class="nav-link text-neutral-400 hover:text-white border-b-2 border-transparent pb-0.5 transition-colors">NEWS</button>
         </nav>
+        </div>
     </header>
 
     <!-- ==========================================================================
