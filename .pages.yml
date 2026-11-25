@@ -1,1 +1,90 @@
+media:
+input: immagini
+output: immagini
 
+content:
+
+name: radio_data
+label: Gestione Contenuti Radio
+path: dati/radio.json
+type: json
+fields:
+
+name: live
+label: Diretta (Home)
+type: object
+fields:
+
+name: titolo
+label: Titolo programma in onda
+type: string
+
+name: sottotitolo
+label: Sottotitolo / Host
+type: string
+
+name: immagine
+label: Foto copertina live
+type: image
+
+name: streamUrl
+label: Link flusso audio (MP3 / Icecast / Shoutcast)
+type: string
+
+name: podcasts
+label: Episodi Podcast
+type: list
+fields:
+
+name: id
+label: ID univoco (es. pod-6)
+type: string
+
+name: titolo
+label: Titolo puntata
+type: string
+
+name: categoria
+label: Categoria (TECHNO, PUNK, PARLATO)
+type: string
+
+name: host
+label: Host / Conduttore
+type: string
+
+name: durata
+label: Durata (es. 50 MIN)
+type: string
+
+name: img
+label: Copertina puntata
+type: image
+
+name: news
+label: Articoli News
+type: list
+fields:
+
+name: id
+label: ID articolo (es. news-4)
+type: string
+
+name: data
+label: Data pubblicazione
+type: string
+
+name: titolo
+label: Titolo articolo
+type: string
+
+name: estratto
+label: Estratto breve
+type: text
+
+name: contenutoCompleto
+label: Testo completo
+type: text
+
+name: img
+label: Foto articolo
+type: image
