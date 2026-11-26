@@ -114,27 +114,30 @@
     <!-- ==========================================================================
          HEADER FISSO IN ALTO (Banda nera piena con Logo URM e Menu Navigazione)
          ========================================================================== -->
-    <header class="w-full bg-black border-b border-[#242424]">
-        <div class="w-full max-w-6xl mx-auto px-6 sm:px-10 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <header class="w-full bg-black border-b border-[#262626] sticky top-0 z-30">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 pt-6 pb-5 flex flex-col md:flex-row items-center justify-between gap-6">
         
-        <!-- LOGO URM (Cliccabile per tornare alla Home) -->
-        <!-- NOTA PER IL FUTURO: Quando caricherai il tuo logo ufficiale su GitHub, 
-             potrai sostituire questo blocco SVG con: <img src="immagini/logo.png" alt="URM Logo" class="h-20 w-auto"> -->
+        <!-- LOGO URM (Carica il file come immagini/logo.png oppure imposta il percorso da dati/radio.json) -->
         <button onclick="navigateTo('home')" class="text-left group focus:outline-none flex flex-col items-center md:items-start">
-            <svg class="h-16 sm:h-20 w-auto fill-white transition-opacity group-hover:opacity-90" viewBox="0 0 210 95" xmlns="http://www.w3.org/2000/svg" aria-label="URM Underdogs Radio Movement">
-                <!-- Lettera U con dettagli "denti" interni come da template -->
-                <path d="M8 8 H28 V55 C28 65 34 70 43 70 C52 70 58 65 58 55 V8 H78 V56 C78 78 64 90 43 90 C22 90 8 78 8 56 Z"/>
-                <!-- Denti interni alla U -->
-                <polygon points="31,56 35,64 39,56 43,64 47,56 51,64 55,56" fill="#ffffff"/>
-                <polygon points="33,70 37,63 41,70 45,63 49,70 53,63" fill="#ffffff"/>
-                <!-- Lettera R -->
-                <path d="M88 8 H126 C141 8 150 17 150 32 C150 43 144 51 134 54 L152 88 H130 L115 57 H108 V88 H88 Z M108 24 V42 H122 C128 42 131 38 131 33 C131 28 128 24 122 24 Z"/>
-                <!-- Lettera M -->
-                <path d="M160 8 H182 L195 45 L208 8 H230 V88 H212 V37 L198 76 H192 L178 37 V88 H160 Z" transform="scale(0.88, 1) translate(20,0)"/>
-            </svg>
-            <div class="mt-1 text-center md:text-left leading-tight">
-                <div class="font-display text-sm sm:text-base tracking-widest text-white">UNDERDOGS RADIO MOVEMENT</div>
-                <div class="font-display text-xs sm:text-sm tracking-widest text-neutral-300">NEVER STOP BITING</div>
+            <img id="urm-logo-img"
+                 src="immagini/logo.png"
+                 alt="URM Underdogs Radio Movement"
+                 class="h-16 sm:h-20 w-auto object-contain transition-opacity group-hover:opacity-90"
+                 onerror="this.classList.add('hidden'); document.getElementById('urm-logo-fallback').classList.remove('hidden');">
+
+            <!-- Logo vettoriale di riserva visibile solo se immagini/logo.png non è ancora caricato -->
+            <div id="urm-logo-fallback" class="flex flex-col items-center md:items-start">
+                <svg class="h-16 sm:h-20 w-auto fill-white transition-opacity group-hover:opacity-90" viewBox="0 0 210 95" xmlns="http://www.w3.org/2000/svg" aria-label="URM Underdogs Radio Movement">
+                    <path d="M8 8 H28 V55 C28 65 34 70 43 70 C52 70 58 65 58 55 V8 H78 V56 C78 78 64 90 43 90 C22 90 8 78 8 56 Z"/>
+                    <polygon points="31,56 35,64 39,56 43,64 47,56 51,64 55,56" fill="#ffffff"/>
+                    <polygon points="33,70 37,63 41,70 45,63 49,70 53,63" fill="#ffffff"/>
+                    <path d="M88 8 H126 C141 8 150 17 150 32 C150 43 144 51 134 54 L152 88 H130 L115 57 H108 V88 H88 Z M108 24 V42 H122 C128 42 131 38 131 33 C131 28 128 24 122 24 Z"/>
+                    <path d="M160 8 H182 L195 45 L208 8 H230 V88 H212 V37 L198 76 H192 L178 37 V88 H160 Z" transform="scale(0.88, 1) translate(20,0)"/>
+                </svg>
+                <div class="mt-1 text-center md:text-left leading-tight">
+                    <div class="font-display text-sm sm:text-base tracking-widest text-white">UNDERDOGS RADIO MOVEMENT</div>
+                    <div class="font-display text-xs sm:text-sm tracking-widest text-neutral-300">NEVER STOP BITING</div>
+                </div>
             </div>
         </button>
 
@@ -257,7 +260,6 @@
             <div class="max-w-6xl mx-auto">
                 <h1 class="font-display text-5xl sm:text-6xl text-white mb-2">ARCHIVIO</h1>
 
-                <!-- Barra Filtri Principale e Sotto-filtri -->
                 <div class="border-b border-[#2a2a2a] pb-3 mb-7">
                     <div class="flex flex-wrap items-center gap-6 sm:gap-8 text-lg sm:text-xl tracking-wider">
                         <button onclick="setArchiveFilterMode('TUTTI')" data-arch-mode="TUTTI" class="arch-mode-btn text-white font-bold transition-colors">TUTTI</button>
@@ -266,13 +268,11 @@
                         <button onclick="setArchiveFilterMode('HOST')" data-arch-mode="HOST" class="arch-mode-btn text-[#888888] hover:text-white transition-colors">HOST</button>
                     </div>
 
-                    <!-- Barra Sotto-opzioni (Appare quando si seleziona GENERE, ANNO o HOST) -->
                     <div id="archive-subfilters" class="hidden flex-wrap items-center gap-3 pt-3 mt-3 border-t border-[#222222] text-sm font-sub tracking-widest">
                         <!-- Popolato dinamicamente via JS -->
                     </div>
                 </div>
 
-                <!-- Griglia Archivio 4 Colonne su Desktop -->
                 <div id="archive-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-9">
                     <!-- Popolato via JavaScript -->
                 </div>
@@ -286,7 +286,6 @@
             <div class="max-w-6xl mx-auto">
                 <h1 class="font-display text-5xl sm:text-6xl text-white mb-6">NEWS</h1>
 
-                <!-- Griglia News 3 Colonne su Desktop -->
                 <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
                     <!-- Popolato via JavaScript -->
                 </div>
@@ -296,7 +295,7 @@
     </main>
 
     <!-- ==========================================================================
-         MINI PLAYER PERSISTENTE IN BASSO (Appare quando ascolti Live, Podcast o Archivio)
+         MINI PLAYER PERSISTENTE IN BASSO
          ========================================================================== -->
     <div id="bottom-player" class="fixed bottom-0 left-0 right-0 bg-neutral-950/95 border-t border-neutral-800 backdrop-blur-md px-6 py-3 transform translate-y-full transition-transform duration-300 z-40">
         <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
@@ -314,7 +313,6 @@
                 </div>
             </div>
 
-            <!-- Controllo Volume, Equalizzatore e Stop -->
             <div class="flex items-center gap-4 sm:gap-6 shrink-0">
                 <div class="hidden sm:flex items-center gap-2">
                     <span class="font-sub text-[11px] text-neutral-500 uppercase tracking-wider">VOL</span>
@@ -359,18 +357,22 @@
 
     <!-- ==========================================================================
          LOGICA JAVASCRIPT E DATI STRUTTURATI
-         (Questi dati verranno collegati direttamente ai file di Pages CMS su GitHub)
          ========================================================================== -->
     <script>
-        /* --------------------------------------------------------------------------
-           1. ARCHIVIO DATI DEL SITO (Caricato da dati/radio.json con fallback locale)
-           -------------------------------------------------------------------------- */
         let RADIO_DATA = {
+            impostazioni: {
+                logo: "immagini/logo.png",
+                instagram: "https://instagram.com",
+                soundcloud: "https://soundcloud.com",
+                mixcloud: "https://mixcloud.com",
+                donazioniUrl: "https://ko-fi.com",
+                emailContatti: "info@underdogs-radio.it"
+            },
             live: {
                 titolo: "THE GRINDING HOUR",
                 sottotitolo: "CON DJ AXEL — DIRETTA STUDIO",
                 immagine: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
-                streamUrl: "" // Qui andrà il link reale Shoutcast/Icecast della radio
+                streamUrl: ""
             },
             palinsesto: {
                 "LUN": [
@@ -450,7 +452,6 @@
             ]
         };
 
-        // Carica i dati aggiornati da Pages CMS (dati/radio.json) quando il sito è online
         async function loadExternalRadioData() {
             try {
                 const response = await fetch('dati/radio.json?t=' + Date.now());
@@ -460,13 +461,26 @@
                     RADIO_DATA = {
                         ...RADIO_DATA,
                         ...externalData,
+                        impostazioni: { ...RADIO_DATA.impostazioni, ...(externalData.impostazioni || {}) },
                         live: { ...RADIO_DATA.live, ...(externalData.live || {}) },
                         palinsesto: { ...RADIO_DATA.palinsesto, ...(externalData.palinsesto || {}) }
                     };
+                    applySiteSettings();
                     applyLiveDataToHome();
                 }
             } catch (err) {
                 console.warn('Uso dati integrati (normale se testato in locale senza server):', err);
+            }
+        }
+
+        function applySiteSettings() {
+            const logoPath = (RADIO_DATA.impostazioni && RADIO_DATA.impostazioni.logo) || 'immagini/logo.png';
+            const logoImg = document.getElementById('urm-logo-img');
+            const fallback = document.getElementById('urm-logo-fallback');
+            if (logoImg && fallback) {
+                logoImg.classList.remove('hidden');
+                fallback.classList.add('hidden');
+                logoImg.src = logoPath;
             }
         }
 
@@ -480,9 +494,6 @@
             if (imgEl && RADIO_DATA.live.immagine) imgEl.src = RADIO_DATA.live.immagine;
         }
 
-        /* --------------------------------------------------------------------------
-           2. STATO APPLICAZIONE E NAVIGAZIONE TRA LE 5 SCHEDE
-           -------------------------------------------------------------------------- */
         let currentDay = 'MER';
         let currentCategory = 'TUTTI';
         let currentArchiveMode = 'TUTTI';
@@ -493,13 +504,10 @@
         let mainSynth = null;
 
         function navigateTo(sectionId) {
-            // Nasconde tutte le viste
             document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
-            // Mostra la vista selezionata
             const target = document.getElementById(`view-${sectionId}`);
             if (target) target.classList.add('active');
 
-            // Aggiorna la sottolineatura bianca nel menu in alto
             document.querySelectorAll('.nav-link').forEach(btn => {
                 if (btn.dataset.nav === sectionId) {
                     btn.classList.remove('text-neutral-400', 'border-transparent');
@@ -513,15 +521,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* --------------------------------------------------------------------------
-           3. RENDER PALINSESTO
-           -------------------------------------------------------------------------- */
         function renderSchedule(day) {
             currentDay = day;
             const listEl = document.getElementById('schedule-list');
             const shows = RADIO_DATA.palinsesto[day] || [];
 
-            // Aggiorna stato pulsanti giorni
             document.querySelectorAll('.day-btn').forEach(btn => {
                 if (btn.dataset.day === day) {
                     btn.classList.remove('text-neutral-500');
@@ -532,7 +536,6 @@
                 }
             });
 
-            // Genera le righe del palinsesto come da template
             listEl.innerHTML = shows.map(show => `
                 <div class="py-4 sm:py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors px-1">
                     <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
@@ -559,14 +562,10 @@
             renderSchedule(todayCode);
         }
 
-        /* --------------------------------------------------------------------------
-           4. RENDER PODCAST E FILTRI
-           -------------------------------------------------------------------------- */
         function renderPodcasts(category) {
             currentCategory = category;
             const listEl = document.getElementById('podcast-list');
 
-            // Aggiorna stato pulsanti categoria
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 if (btn.dataset.cat === category) {
                     btn.classList.remove('text-neutral-500');
@@ -585,7 +584,6 @@
                 const isThisPlaying = isPlaying && currentTrackId === pod.id;
                 return `
                 <div class="py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-5 hover:bg-white/[0.02] transition-colors px-1">
-                    <!-- Sinistra: Tasto Play + Miniatura + Titolo -->
                     <div class="flex items-center gap-3 sm:gap-5 min-w-0">
                         <button onclick="playPodcast('${pod.id}')" aria-label="Ascolta ${pod.titolo}" class="play-circle-btn w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-black flex items-center justify-center shrink-0">
                             ${isThisPlaying 
@@ -601,7 +599,6 @@
                         <h3 class="font-display text-2xl sm:text-4xl text-white leading-none truncate">${pod.titolo}</h3>
                     </div>
 
-                    <!-- Destra: Genere, Host/Durata e secondo tasto Play come da template -->
                     <div class="flex items-center gap-4 shrink-0 text-right">
                         <div class="leading-tight">
                             <div class="font-sub text-xs text-neutral-500 uppercase">${pod.categoria}</div>
@@ -623,14 +620,10 @@
             renderPodcasts(cat);
         }
 
-        /* --------------------------------------------------------------------------
-           5. RENDER ARCHIVIO (Griglia 4 colonne + Filtri Genere, Anno, Host)
-           -------------------------------------------------------------------------- */
         function setArchiveFilterMode(mode) {
             currentArchiveMode = mode;
             const subBar = document.getElementById('archive-subfilters');
 
-            // Aggiorna stato pulsanti principali
             document.querySelectorAll('.arch-mode-btn').forEach(btn => {
                 if (btn.dataset.archMode === mode) {
                     btn.classList.remove('text-[#888888]');
@@ -649,7 +642,6 @@
                 return;
             }
 
-            // Estrae i valori unici per la modalità selezionata (GENERE, ANNO o HOST)
             const keyMap = { 'GENERE': 'genere', 'ANNO': 'anno', 'HOST': 'host' };
             const field = keyMap[mode];
             const uniqueValues = [...new Set(RADIO_DATA.archivio.map(item => item[field]))];
@@ -697,14 +689,12 @@
                 const isThisPlaying = isPlaying && currentTrackId === item.id;
                 return `
                 <article onclick="playArchiveItem('${item.id}')" class="group cursor-pointer flex flex-col">
-                    <!-- Immagine B&N senza bordi arrotondati -->
                     <div class="relative w-full aspect-[4/3] bg-neutral-900 overflow-hidden border border-[#2a2a2a] mb-3">
                         <img src="${item.img}" 
                              onerror="this.src='https://placehold.co/600x450/1a1a1a/ffffff?text=URM+ARCHIVE'" 
                              alt="${item.titolo}" 
                              class="w-full h-full object-cover urm-photo group-hover:scale-105">
                         
-                        <!-- Overlay Play discreto al passaggio del mouse o quando in onda -->
                         <div class="absolute inset-0 bg-black/40 ${isThisPlaying ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity flex items-center justify-center">
                             <div class="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center shadow-lg">
                                 ${isThisPlaying 
@@ -715,12 +705,10 @@
                         </div>
                     </div>
 
-                    <!-- Titolo condensato bianco -->
                     <h2 class="font-display text-2xl sm:text-[26px] text-white leading-[1.05] tracking-wide group-hover:text-neutral-300 transition-colors">
                         ${item.titolo}
                     </h2>
 
-                    <!-- Metadata Host / Anno -->
                     <div class="font-sub text-xs sm:text-sm text-[#888888] uppercase mt-1 tracking-wider">
                         ${item.host} / ${item.anno}
                     </div>
@@ -729,15 +717,11 @@
             }).join('');
         }
 
-        /* --------------------------------------------------------------------------
-           6. RENDER NEWS (Griglia 3 colonne + Apertura articolo completo)
-           -------------------------------------------------------------------------- */
         function renderNews() {
             const gridEl = document.getElementById('news-grid');
             gridEl.innerHTML = RADIO_DATA.news.map(article => `
                 <article class="flex flex-col justify-between group">
                     <div>
-                        <!-- Foto rettangolare B&N -->
                         <div onclick="openNewsArticle('${article.id}')" class="cursor-pointer w-full aspect-[16/10] bg-neutral-900 overflow-hidden border border-[#2a2a2a] mb-4">
                             <img src="${article.img}" 
                                  onerror="this.src='https://placehold.co/800x500/1a1a1a/ffffff?text=URM+NEWS'" 
@@ -745,23 +729,19 @@
                                  class="w-full h-full object-cover urm-photo group-hover:scale-105">
                         </div>
 
-                        <!-- Data -->
                         <div class="font-sub text-xs sm:text-sm text-[#888888] uppercase tracking-widest mb-1.5">
                             ${article.data}
                         </div>
 
-                        <!-- Titolo -->
                         <h2 onclick="openNewsArticle('${article.id}')" class="cursor-pointer font-display text-3xl sm:text-[34px] text-white leading-[1.05] mb-3 group-hover:text-neutral-300 transition-colors">
                             ${article.titolo}
                         </h2>
 
-                        <!-- Estratto 3 righe -->
                         <p class="font-sub text-neutral-300 text-sm sm:text-base leading-relaxed line-clamp-3 mb-5">
                             ${article.estratto}
                         </p>
                     </div>
 
-                    <!-- Link LEGGI TUTTO -->
                     <div>
                         <button onclick="openNewsArticle('${article.id}')" class="font-display text-lg tracking-wider text-white hover:text-neutral-400 transition-colors inline-flex items-center gap-2">
                             <span>LEGGI TUTTO</span>
@@ -797,9 +777,6 @@
             modal.classList.add('flex');
         }
 
-        /* --------------------------------------------------------------------------
-           7. GESTIONE PLAYER AUDIO (Web Audio / Tone.js di test)
-           -------------------------------------------------------------------------- */
         async function startDemoSynth() {
             await Tone.start();
             if (!synthLoop) {
@@ -829,7 +806,6 @@
 
         function updateVolume(val) {
             if (mainSynth) {
-                // Converte 0-100 in decibel (-40dB a -4dB)
                 mainSynth.volume.value = val == 0 ? -Infinity : -40 + (val / 100) * 36;
             }
         }
@@ -908,7 +884,6 @@
         }
 
         function syncAudioUI() {
-            // Aggiorna tasto Home
             const isLiveActive = isPlaying && currentTrackId === 'live';
             document.getElementById('home-icon-play').classList.toggle('hidden', isLiveActive);
             document.getElementById('home-icon-pause').classList.toggle('hidden', !isLiveActive);
@@ -917,24 +892,20 @@
                 ? "w-2 h-2 rounded-full bg-red-500 animate-ping" 
                 : "w-2 h-2 rounded-full bg-neutral-500";
 
-            // Aggiorna barra player in basso
             document.getElementById('bar-icon-play').classList.toggle('hidden', isPlaying);
             document.getElementById('bar-icon-pause').classList.toggle('hidden', !isPlaying);
             document.getElementById('player-eq').style.opacity = isPlaying ? '1' : '0.2';
 
-            // Aggiorna icone nelle liste Podcast e Archivio
             renderPodcasts(currentCategory);
             renderArchive();
         }
 
-        /* --------------------------------------------------------------------------
-           8. MODALI DEL FOOTER (Social, Donazioni, Contatti)
-           -------------------------------------------------------------------------- */
         function openInfoModal(type) {
             const modal = document.getElementById('info-modal');
             const meta = document.getElementById('modal-meta');
             const title = document.getElementById('modal-title');
             const body = document.getElementById('modal-body');
+            const s = RADIO_DATA.impostazioni || {};
 
             meta.classList.add('hidden');
 
@@ -943,9 +914,9 @@
                 body.innerHTML = `
                     <p>Resta connesso con l'underground. Seguici sui nostri canali ufficiali:</p>
                     <div class="flex flex-col gap-2 pt-2">
-                        <a href="#" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">INSTAGRAM — @UNDERDOGS.RADIO</a>
-                        <a href="#" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">SOUNDCLOUD — URM ARCHIVES</a>
-                        <a href="#" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">MIXCLOUD — URM LIVE SESSIONS</a>
+                        <a href="${s.instagram || '#'}" target="_blank" rel="noopener" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">INSTAGRAM — @UNDERDOGS.RADIO</a>
+                        <a href="${s.soundcloud || '#'}" target="_blank" rel="noopener" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">SOUNDCLOUD — URM ARCHIVES</a>
+                        <a href="${s.mixcloud || '#'}" target="_blank" rel="noopener" class="border border-neutral-700 px-4 py-2 hover:bg-white hover:text-black transition-colors">MIXCLOUD — URM LIVE SESSIONS</a>
                     </div>
                 `;
             } else if (type === 'donazioni') {
@@ -953,14 +924,14 @@
                 body.innerHTML = `
                     <p>URM è una web radio indipendente, libera e senza pubblicità. Ogni contributo aiuta a mantenere attivi i server e lo studio.</p>
                     <div class="pt-2">
-                        <a href="#" class="inline-block w-full text-center bg-white text-black font-display text-xl py-2.5 tracking-wider hover:bg-neutral-200 transition-colors">DONA ORA / PAYPAL & KO-FI</a>
+                        <a href="${s.donazioniUrl || '#'}" target="_blank" rel="noopener" class="inline-block w-full text-center bg-white text-black font-display text-xl py-2.5 tracking-wider hover:bg-neutral-200 transition-colors">DONA ORA / PAYPAL & KO-FI</a>
                     </div>
                 `;
             } else if (type === 'contatti') {
                 title.textContent = "CONTATTI & DEMO";
                 body.innerHTML = `
                     <p>Vuoi proporre un programma, inviare un DJ set o collaborare con Underdogs Radio Movement?</p>
-                    <p class="text-white font-bold pt-1">EMAIL: INFO@UNDERDOGS-RADIO.IT</p>
+                    <p class="text-white font-bold pt-1">EMAIL: ${(s.emailContatti || 'INFO@UNDERDOGS-RADIO.IT').toUpperCase()}</p>
                 `;
             }
 
@@ -975,10 +946,8 @@
             modal.classList.remove('flex');
         }
 
-        /* --------------------------------------------------------------------------
-           9. INIZIALIZZAZIONE AL CARICAMENTO PAGINA
-           -------------------------------------------------------------------------- */
         window.onload = async function() {
+            applySiteSettings();
             applyLiveDataToHome();
             renderSchedule('MER');
             renderPodcasts('TUTTI');
@@ -986,6 +955,7 @@
             renderNews();
 
             await loadExternalRadioData();
+            applySiteSettings();
             applyLiveDataToHome();
             renderSchedule(currentDay);
             renderPodcasts(currentCategory);
